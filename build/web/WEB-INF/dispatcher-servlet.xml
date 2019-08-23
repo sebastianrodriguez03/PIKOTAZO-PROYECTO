@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--<?xml version="1.0" encoding="UTF-8"?>--> 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+           <property name="mappings">
+            <props>
+                <prop key="index.htm">HomeController</prop>
+                <prop key="indexAdmin.htm">AdminController</prop>
+                
+                <prop key="indexContactenos.htm">ContactenosController</prop>
+                <prop key="indexCliente.htm">ClienteController</prop>
+                <prop key="agregarCliente.htm">ClienteController</prop>
+                <prop key="editarCliente.htm">ClienteController</prop>
+                <prop key="deleteCliente.htm">ClienteController</prop>
+                
+                <prop key="indexPedido.htm">PedidoController</prop>
+                <prop key="agregarPedido.htm">PedidoController</prop>
+                <prop key="editarPedido.htm">PedidoController</prop>
+                <prop key="deletePedido.htm">PedidoController</prop>
+                
+                <prop key="indexPlato.htm">PlatoController</prop>
+                <prop key="agregarPlato.htm">PlatoController</prop>
+                <prop key="editarPlato.htm">PlatoController</prop>
+                <prop key="deletePlato.htm">PlatoController</prop>
+                
+                <prop key="indexDetallePedido.htm">DetallePedidoController</prop>
+                <prop key="agregarDetallePedido.htm">DetallePedidoController</prop>
+                <prop key="editarDetallePedido.htm">DetallePedidoController</prop>
+                <prop key="deleteDetallePedido.htm">DetallePedidoController</prop>
+                
+                <prop key="indexCargo.htm">CargoController</prop>
+                <prop key="agregarCargo.htm">CargoController</prop>
+                <prop key="editarCargo.htm">CargoController</prop>
+                <prop key="deleteCargo.htm">CargoController</prop>
+                
+                <prop key="indexPago.htm">PagoController</prop>
+                <prop key="agregarPago.htm">PagoController</prop>
+                <prop key="editarPago.htm">PagoController</prop>
+                <prop key="deletePago.htm">PagoController</prop>
+                
+                <prop key="indexEmpleado.htm">EmpleadoController</prop>
+                <prop key="agregarEmpleado.htm">EmpleadoController</prop>
+                <prop key="editarEmpleado.htm">EmpleadoController</prop>
+                <prop key="deleteEmpleado.htm">EmpleadoController</prop>
+                
+                <prop key="indexMesa.htm">MesaController</prop>
+                <prop key="agregarMesa.htm">MesaController</prop>
+                <prop key="editarMesa.htm">MesaController</prop>
+                <prop key="deleteMesa.htm">MesaController</prop>
+                
+                 <prop key="login.htm">LoginController</prop>
+                 <prop key="menu.htm">MenuController</prop>
+                 <prop key="Reservacion.htm">ReservacionController</prop>
+                 <prop key="galeria.htm">GaleriaController</prop>
+                 <prop key="About.htm">AboutController</prop>
+                 <prop key="eventos.htm">EventoController</prop>
+                 <prop key="indexUsuario.htm">UsuarioController</prop>
+                
+                
+                
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="ClienteController" class="Controller.ClienteController" />
+    <bean name="PedidoController" class="Controller.PedidoController" />
+    <bean name="PlatoController" class="Controller.PlatoController" />
+    <bean name="DetallePedidoController" class="Controller.DetallePedidoController" />
+    <bean name="CargoController" class="Controller.CargoController" />
+    <bean name="PagoController" class="Controller.PagoController" />
+    <bean name="EmpleadoController" class="Controller.EmpleadoController" />
+    <bean name="MesaController" class="Controller.MesaController" />
+    <bean name="ContactenosController" class="Controller.ContactenosController" />
+    <bean name="AdminController" class="Controller.AdminController" />
+    <bean name="HomeController" class="Controller.HomeController" />
+    <bean name="LoginController" class="Controller.LoginController" />
+    <bean name="MenuController" class="Controller.MenuController" />
+    <bean name="ReservacionController" class="Controller.ReservacionController" />
+    <bean name="GaleriaController" class="Controller.GaleriaController" />
+    <bean name="AboutController" class="Controller.AboutController" />
+    <bean name="EventoController" class="Controller.EventoController" />
+    <bean name="UsuarioController" class="Controller.UsuarioController" />
+    
+    
+    
+    
+
+</beans>
